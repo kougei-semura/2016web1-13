@@ -1,3 +1,22 @@
+function getFileName(){
+  return window.location.href.split('/').pop();
+}
+
+var filename = getFileName();
+var opt;
+if(filename === 'other.html'){
+  opt = document.querySelector('option[value="other.html"]');
+}else{
+  opt = document.querySelector('option[value="index.html"]');
+}
+opt.selected = true;
+
+document.getElementById('form').select.onchange = function(){
+  location.href = document.getElementById('form').select.value;
+}
+
+
+
 var separate_time = function(time){
   var sec   = Math.floor((time / 1000) % 60);
   var min   = Math.floor((time / 1000 / 60) % 60);
@@ -24,21 +43,4 @@ var refresh = function(){
   setTimeout(update, 1000);
 }
 update();
-
-function getFileName(){
-  return window.location.href.split('/').pop();
-}
-
-var filename = getFileName();
-var opt;
-if(filename === 'other.html'){
-  opt = document.querySelector('option[value="other.html"]');
-}else{
-  opt = document.querySelector('option[value="index.html"]');
-}
-opt.selected = true;
-
-document.getElementById('form').select.onchange = function(){
-  location.href = document.getElementById('form').select.value;
-}
 
