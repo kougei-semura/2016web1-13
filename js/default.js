@@ -20,6 +20,11 @@ counter[0] + '秒';
 refresh();
 }
 
+var refresh = function(){
+  setTimeout(update, 1000);
+}
+update();
+
 function getFileName(){
   return window.location.href.split('/').pop();
 }
@@ -37,8 +42,3 @@ document.getElementById('form').select.onchange = function(){
   location.href = document.getElementById('form').select.value;
 }
 
-
-var refresh = function(){
-  setTimeout(update, 1000);
-}
-update();
