@@ -3,9 +3,7 @@ var separate_time = function(time){
   var min = time.getMinutes();
   var hours = time.getHours();
   var days = time.getDate();
-  var month = time.getMonth();
-  var year = time.getFullYear();
-  return [sec, min, hour, days, month, year];
+  return [sec, min, hour, days];
 }
 
 
