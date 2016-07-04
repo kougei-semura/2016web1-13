@@ -20,6 +20,11 @@ counter[0] + '秒';
 refresh();
 }
 
+document.getElementById('form').select.onchange =function(){
+  location.href = document.getElementById('form').select.value;
+}
+
+
 var refresh = function(){
   setTimeout(update, 1000);
 }
